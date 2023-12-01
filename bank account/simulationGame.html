@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIMULATION GAME</title>
+  </head>
+  <body style="background-color: #222">
+    <h1 style="text-align: center; color: #fff">SIMULATION GAME</h1>
+
+    <script>
+      function Vehicle(brand, model, speed, fuelType) {
+        this.brand = brand;
+        this.model = model;
+        this.speed = speed || 0;
+        this.fuelType = fuelType || "unknown";
+      }
+
+      // Vehicle prototype methods
+      Vehicle.prototype.accelerate = function (speedIncrease) {
+        this.speed += speedIncrease;
+        console.log(
+          `${this.brand} ${this.model} is accelerating. Current speed: ${this.speed} mph`
+        );
+      };
+
+      Vehicle.prototype.brake = function (speedDecrease) {
+        this.speed = Math.max(0, this.speed - speedDecrease);
+        console.log(
+          `${this.brand} ${this.model} is braking. Current speed: ${this.speed} mph`
+        );
+      };
+
+      Vehicle.prototype.refuel = function () {
+        console.log(`${this.brand} ${this.model} is refueling.`);
+      };
+
+      // Car constructor function
+      function Car(brand, model, speed, fuelType, numberOfWheels) {
+        Vehicle.call(this, brand, model, speed, fuelType);
+        this.numberOfWheels = numberOfWheels || 4;
+      }
+
+      // Inherit from Vehicle
+      Car.prototype = Object.create(Vehicle.prototype);
+      Car.prototype.constructor = Car;
+
+      // Additional Car method
+      Car.prototype.honk = function () {
+        console.log(`${this.brand} ${this.model} is honking.`);
+      };
+
+      // Airplane constructor function
+      function Airplane(
+        brand,
+        model,
+        speed,
+        fuelType,
+        numberOfEngines,
+        hasLandingGear
+      ) {
+        Vehicle.call(this, brand, model, speed, fuelType);
+        this.numberOfEngines = numberOfEngines || 2;
+        this.hasLandingGear = hasLandingGear || true;
+      }
+
+      // Inherit from Vehicle
+      Airplane.prototype = Object.create(Vehicle.prototype);
+      Airplane.prototype.constructor = Airplane;
+
+      // Additional Airplane method
+      Airplane.prototype.takeOff = function () {
+        console.log(`${this.brand} ${this.model} is taking off.`);
+      };
+
+      // Example usage
+      const myCar = new Car("Toyota", "Camry", 0, "gas", 4);
+      const myAirplane = new Airplane("Boeing", "747", 0, "jet fuel", 4, true);
+
+      myCar.accelerate(30);
+      myCar.honk();
+      myCar.brake(10);
+      myCar.refuel();
+
+      console.log("");
+
+      myAirplane.accelerate(200);
+      myAirplane.takeOff();
+      myAirplane.brake(50);
+      myAirplane.refuel();
+    </script>
+  </body>
+</html>
