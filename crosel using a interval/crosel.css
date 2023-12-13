@@ -1,0 +1,85 @@
+body{
+    /* background-color: #000; */
+    /* color: #fff; */
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .slider{
+    height: 80%;
+    width: 80%;
+    transition: all 0.5s;
+    animation-name: scrolldiv;
+    animation-duration: 20s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border: black 10px double;
+    background-clip: content-box; */
+    
+}
+
+.btnprev{
+    border: 4mm ridge burlywood;
+    cursor: pointer;
+}
+
+@keyframes scrolldiv {
+    0%{
+        background-image: url("https://tse2.mm.bing.net/th?id=OIP.tHjXGb8lC_uTO5c9iPecqwAAAA&pid=Api&P=0&h=180");
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+        border: black 10px double;
+        background-clip: content-box;
+    }
+    25%{
+        background-image: url("https://tse1.mm.bing.net/th?id=OIP.-3tcQNXIpB01gCJFBiJk_gHaCF&pid=Api&P=0&h=180");
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 40%;
+        border: black 10px double;
+        background-clip: content-box;
+    }
+    50%{
+        background-image: url("https://tse3.mm.bing.net/th?id=OIP.WXOyi2RkWruFvwKiO-y6ewHaEK&pid=Api&P=0&h=180");
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        border: black 10px double;
+        background-clip: content-box;
+    }
+    75%{
+        background-image: url("https://i.pinimg.com/564x/f1/74/df/f174df623fd1af96e28b416641b131e6.jpg");
+        border-top-left-radius: 60%;
+        border-top-right-radius: 60%;
+        border-bottom-left-radius: 60%;
+        border-bottom-right-radius: 60%;
+        border: black 10px double;
+        background-clip: content-box;
+    }
+    100%{
+        background-image: url("https://tse2.mm.bing.net/th?id=OIP.akz0hTxRH7ofWzOzjjH3zQHaDn&pid=Api&P=0&h=180");
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        border: black 10px double;
+        background-clip: content-box;
+    }
+}

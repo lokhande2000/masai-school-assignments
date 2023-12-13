@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhonePe Payment</title>
+  <style>
+    /* Add your CSS styles for the PhonePe UI here */
+    body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    button{
+        padding: 10px 12px;
+        border-radius: 5px;
+        background-color: grey;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 100px;
+    }
+    #processing {
+      display: none;
+    }
+    #success{
+        color: green;
+    }
+    #failure{
+        color:red;
+    }
+    #success, #failure {
+      display: none;
+    }
+    #success, #failure, #processing{
+        font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PhonePe UI Elements -->
+<div id="processing">Processing...</div>
+<div id="success">Payment Successful</div>
+<div id="failure">Payment Failed</div>
+
+<!-- Button to initiate payment -->
+<button onclick="initiatePayment()">Make Payment</button>
+
+<script>
+function simulatePayment() {
+  // Simulate async payment processing
+  return new Promise((resolve, reject) => {
+    const isSuccess = Math.random() > 0.5; // 50% chance of success
+    setTimeout(() => {
+      if (isSuccess) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 2000); // Simulate a 2-second payment process
+  });
+}
+
+function showProcessingUI() {
+  document.getElementById('processing').style.display = 'block';
+}
+
+function showSuccessUI() {
+  document.getElementById('processing').style.display = 'none';
+  document.getElementById('success').style.display = 'block';
+}
+
+function showFailureUI() {
+  document.getElementById('processing').style.display = 'none';
+  document.getElementById('failure').style.display = 'block';
+}
+
+function initiatePayment() {
+  showProcessingUI();
+
+  simulatePayment()
+    .then(() => {
+      showSuccessUI();
+    })
+    .catch(() => {
+      showFailureUI();
+    });
+}
+</script>
+
+</body>
+</html>
