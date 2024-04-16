@@ -1,0 +1,82 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+
+  body{
+    width: 100%;
+    background-color: #d5d1d1;
+  }
+
+  h1{
+    text-align: center;
+    margin-top: 20px;
+  }
+  .container{
+    margin: 40px 0 0 0px;
+    background-color: #9d9797;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .datails{
+    width: 25vw;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: rgb(203, 206, 203);
+    padding: 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  input, select{
+    font-size: 1.2vw;
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+
+  table{
+    width: 75vw;
+    display: inline-table;
+    background-color: rgb(134, 165, 42);
+    padding: 0;
+    max-width: 0;
+    
+
+  }
+  th, td{
+      border-collapse: collapse;
+      border: 2px solid red;
+      padding: 5px 10px;
+    font-size: 1.1vw;
+
+  }
+  tr :nth-child(even){
+    background-color: rgba(165, 85, 42, 0.852);
+  }
+  tbody tr :nth-child(even){
+    text-align: center;
+    background-color: rgba(165, 85, 42, 0.852);
+  }
+
+  tbody button{
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(222, 64, 64);
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 1.1vw;
+  }
+  button:hover{
+    color: #fff;
+    background-color: red;
+  }
